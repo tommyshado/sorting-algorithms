@@ -1,23 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BubbleSortAlgorithm = void 0;
-class BubbleSortAlgorithm {
-    sortArray(arr) {
-        let arrLength = arr.length;
-        let i = 0;
-        while (i < arrLength) {
-            let j = 0;
-            while (j < arrLength) {
-                // check the first two numbers from the list
-                if (arr[i] > arr[j + 1]) {
-                    [arr[i], arr[j + 1]] = [arr[j + 1], arr[i]];
-                }
+exports.BubbleSort = void 0;
+function BubbleSort(arr) {
+    let arrLength = arr.length;
+    for (let i = 0; i < arrLength; i++) {
+        for (let j = 0; j < arrLength - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // Keep track of arr[j]
+                const temp = arr[j];
+                // Swap the numbers
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
-            ;
-            i++;
         }
-        return arr;
     }
+    return arr;
 }
-exports.BubbleSortAlgorithm = BubbleSortAlgorithm;
-;
+exports.BubbleSort = BubbleSort;
